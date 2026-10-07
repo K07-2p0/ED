@@ -17,11 +17,49 @@ EmptyCollectionException) ficou igual, porque as duas classes implementam a mesm
 O output das duas demonstrações é idêntico.
 Se a variável tivesse sido declarada como QueueADT<String>, só era preciso mudar o import e o "new".
 
-ex 4: -> testes/cesarcypher/CodificadorCircularArrayQueue.java
-        A chave de repetição (3 1 7 4 2 5) é guardada numa CircularArrayQueue. Para cada caracter faz-se
-        dequeue do valor da chave, desloca-se o caracter esse valor e faz-se enqueue do valor outra vez,
+ex 4: -> testes/cesarcypher/EncoderCircularArrayQueue.java
+        A chave de repetição (3 1 7 4 2 5) é guardada numa CircularArrayQueue. Para cada letra faz-se
+        dequeue do valor da chave, desloca-se a letra esse valor e faz-se enqueue do valor outra vez,
         para a chave recomeçar quando se esgota. Para descodificar faz-se o mesmo mas a subtrair.
+        Como no slide 13, a mensagem é "knowledge is power" (codificada: "novanjghl mu urxlv") e os
+        espaços ficam iguais e não gastam valores da chave.
 
-ex 5: -> testes/cesarcypher/CodificadorLinkedQueue.java
+ex 5: -> testes/cesarcypher/EncoderLinkedQueue.java
         O mesmo programa, só mudam o import e o tipo/new da fila (CircularArrayQueue -> LinkedQueue),
         porque as duas implementam QueueADT. O output é igual.
+
+
+Parte II
+
+ex 1: Numa stack todas as operações (push e pop) são feitas na mesma ponta (o topo), por isso o fundo pode ficar
+      fixo no índice 0 do array e nunca é preciso deslocar elementos.
+      Numa queue as operações são feitas nas duas pontas (enqueue na traseira, dequeue na frente). Se a frente
+      ficar fixa no índice 0, cada dequeue obriga a deslocar todos os elementos uma posição para trás, o que
+      custa O(n). Se se deixar a frente andar, o início do array fica desperdiçado e o fim esgota-se mesmo
+      havendo espaço livre.
+      No array circular nenhuma das pontas está fixa: guardam-se os índices front e rear e, quando chegam ao
+      fim, voltam ao índice 0 (rear = (rear + 1) % queue.length). Assim não há deslocamentos, o espaço livre do
+      início é reaproveitado e tanto o enqueue como o dequeue ficam O(1).
+
+ex 2: dequeue:
+      - array (não circular): O(n), porque é preciso deslocar todos os elementos uma posição.
+      - array circular: O(1), só se avança o front (front = (front + 1) % queue.length).
+      - lista ligada: O(1), só se faz front = front.getNext().
+      (O enqueue é O(1) nas três; no array só de vez em quando é O(n), quando é preciso expandCapacity.)
+
+ex 3: -> testes/queue/MergeSortedQueues.java
+      Compara os elementos da frente das duas queues (first) e passa o menor para a queue resultado (dequeue +
+      enqueue). Quando uma esgota, passa o que sobra da outra. Cada elemento é movido uma vez, logo é O(n + m).
+      Os elementos têm de ser Comparable e as duas queues originais ficam vazias.
+
+ex 4: -> structures/queue/StackQueue.java e testes/queue/StackQueueDemo.java
+      Implementa QueueADT com duas LinkedStack. A mainStack guarda os elementos com a frente da queue no
+      topo, por isso dequeue, first, isEmpty e size são só pop, peek, isEmpty e size da mainStack (O(1)).
+      O enqueue passa todos os elementos para a auxStack (ficam invertidos), faz push do novo na mainStack vazia
+      e volta a passar tudo da auxStack para a mainStack (recupera a ordem), por isso é O(n).
+      Com esta solução o toString da stack (topo -> fundo) já sai da frente para a traseira da queue.
+
+ex 5: -> testes/queue/SortStringsQueueDemo.java
+      Cria uma queue por string e uma queue de queues. Enquanto houver mais do que uma queue, faz dequeue de duas,
+      junta-as com MergeSortedQueues.merge (ex. 3) e faz enqueue do resultado no fim. No fim sobra uma queue
+      com as strings ordenadas (é um merge sort).

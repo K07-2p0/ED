@@ -1,12 +1,13 @@
 package testes.queue;
 
 import structures.common.EmptyCollectionException;
-import structures.queue.LinkedQueue;
+import structures.queue.QueueADT;
+import structures.queue.StackQueue;
 
-// Ex. 1 - demonstração da LinkedQueue
-public class LinkedQueueDemo {
+// Parte II, Ex. 4 - demonstração da StackQueue (mesmo cenário da Parte I)
+public class StackQueueDemo {
     public static void main(String[] args) {
-        LinkedQueue<String> queue = new LinkedQueue<String>();
+        QueueADT<String> queue = new StackQueue<String>();
 
         // Cenário: fila de espera de um supermercado
         queue.enqueue("Ana");
