@@ -1,0 +1,58 @@
+{
+  "nome_mapa": "arena_quatro_jogadores",
+  "tamanho_network": 15,
+  "descricao": "Mapa rápido para 4 jogadores. Duas equipas implícitas: Lógica vs Sorte.",
+  "divisoes": [
+    { 
+      "id": 0, 
+      "tipo": "PontoPartida", 
+      "nome": "Base Jogador 1 (Norte)", 
+      "descricao": "Spawn P1" 
+    },
+    { 
+      "id": 1, 
+      "tipo": "PontoPartida", 
+      "nome": "Base Jogador 2 (Sul)", 
+      "descricao": "Spawn P2" 
+    },
+    { 
+      "id": 2, 
+      "tipo": "PontoPartida", 
+      "nome": "Base Jogador 3 (Este)", 
+      "descricao": "Spawn P3" 
+    },
+    { 
+      "id": 3, 
+      "tipo": "PontoPartida", 
+      "nome": "Base Jogador 4 (Oeste)", 
+      "descricao": "Spawn P4" 
+    },
+    { 
+      "id": 10, 
+      "tipo": "SalaEnigma", 
+      "nome": "Câmara do Conhecimento", 
+      "descricao": "Onde os caminhos Norte e Sul se encontram. Requer sabedoria." 
+    },
+    { 
+      "id": 11, 
+      "tipo": "SalaAlavanca", 
+      "nome": "Sala do Risco", 
+      "descricao": "Onde os caminhos Este e Oeste se encontram. Requer sorte.",
+      "corredores_controlados_ids": [] 
+    },
+    { 
+      "id": 99, 
+      "tipo": "SalaTesouro", 
+      "nome": "Centro da Arena", 
+      "descricao": "A Glória final para quem passar o desafio intermédio." 
+    }
+  ],
+  "corredores": [
+    { "id": 101, "origem_id": 0, "destino_id": 10, "peso": 1.0, "bloqueado": false },
+    { "id": 102, "origem_id": 1, "destino_id": 10, "peso": 1.0, "bloqueado": false },
+    { "id": 201, "origem_id": 2, "destino_id": 11, "peso": 1.0, "bloqueado": false },
+    { "id": 202, "origem_id": 3, "destino_id": 11, "peso": 1.0, "bloqueado": false },
+    { "id": 301, "origem_id": 10, "destino_id": 99, "peso": 2.0, "bloqueado": false },
+    { "id": 302, "origem_id": 11, "destino_id": 99, "peso": 2.0, "bloqueado": false }
+  ]
+}

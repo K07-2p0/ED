@@ -1,0 +1,165 @@
+{
+  "nome_mapa": "labirinto_complexo_4p",
+  "tamanho_network": 30,
+  "descricao": "Mapa avançado com 4 quadrantes interligados. 12 Enigmas e 4 Alavancas guardam o tesouro central.",
+  "divisoes": [
+    {
+      "id": 0,
+      "tipo": "PontoPartida",
+      "nome": "Entrada Norte",
+      "descricao": "Base Jogador 1"
+    },
+    {
+      "id": 1,
+      "tipo": "PontoPartida",
+      "nome": "Entrada Este",
+      "descricao": "Base Jogador 2"
+    },
+    {
+      "id": 2,
+      "tipo": "PontoPartida",
+      "nome": "Entrada Sul",
+      "descricao": "Base Jogador 3"
+    },
+    {
+      "id": 3,
+      "tipo": "PontoPartida",
+      "nome": "Entrada Oeste",
+      "descricao": "Base Jogador 4"
+    },
+    {
+      "id": 10,
+      "tipo": "SalaEnigma",
+      "nome": "Biblioteca Norte (1)",
+      "descricao": "O início da sabedoria do Norte."
+    },
+    {
+      "id": 11,
+      "tipo": "SalaEnigma",
+      "nome": "Arquivo Norte (2)",
+      "descricao": "Conhecimento intermédio."
+    },
+    {
+      "id": 12,
+      "tipo": "SalaEnigma",
+      "nome": "Observatório Norte (3)",
+      "descricao": "A última fronteira do Norte."
+    },
+    {
+      "id": 20,
+      "tipo": "SalaEnigma",
+      "nome": "Jardim Este (1)",
+      "descricao": "O início do caminho do Sol."
+    },
+    {
+      "id": 21,
+      "tipo": "SalaEnigma",
+      "nome": "Estufa Este (2)",
+      "descricao": "Natureza densa."
+    },
+    {
+      "id": 22,
+      "tipo": "SalaEnigma",
+      "nome": "Clareira Este (3)",
+      "descricao": "Perto do centro."
+    },
+    {
+      "id": 30,
+      "tipo": "SalaEnigma",
+      "nome": "Caverna Sul (1)",
+      "descricao": "O início das profundezas."
+    },
+    {
+      "id": 31,
+      "tipo": "SalaEnigma",
+      "nome": "Mina Sul (2)",
+      "descricao": "Escuridão intermédia."
+    },
+    {
+      "id": 32,
+      "tipo": "SalaEnigma",
+      "nome": "Fosso Sul (3)",
+      "descricao": "Quase no núcleo."
+    },
+    {
+      "id": 40,
+      "tipo": "SalaEnigma",
+      "nome": "Torre Oeste (1)",
+      "descricao": "O início da escalada."
+    },
+    {
+      "id": 41,
+      "tipo": "SalaEnigma",
+      "nome": "Muralha Oeste (2)",
+      "descricao": "Defesas antigas."
+    },
+    {
+      "id": 42,
+      "tipo": "SalaEnigma",
+      "nome": "Bastião Oeste (3)",
+      "descricao": "A última defesa."
+    },
+    {
+      "id": 80,
+      "tipo": "SalaAlavanca",
+      "nome": "Guardião da Alavanca N",
+      "descricao": "O teste de sorte do Norte.",
+      "corredores_controlados_ids": []
+    },
+    {
+      "id": 81,
+      "tipo": "SalaAlavanca",
+      "nome": "Guardião da Alavanca E",
+      "descricao": "O teste de sorte de Este.",
+      "corredores_controlados_ids": []
+    },
+    {
+      "id": 82,
+      "tipo": "SalaAlavanca",
+      "nome": "Guardião da Alavanca S",
+      "descricao": "O teste de sorte do Sul.",
+      "corredores_controlados_ids": []
+    },
+    {
+      "id": 83,
+      "tipo": "SalaAlavanca",
+      "nome": "Guardião da Alavanca O",
+      "descricao": "O teste de sorte de Oeste.",
+      "corredores_controlados_ids": []
+    },
+    {
+      "id": 99,
+      "tipo": "SalaTesouro",
+      "nome": "Sala do Trono (Meta)",
+      "descricao": "O Tesouro Final!"
+    }
+  ],
+  "corredores": [
+    { "id": 901, "origem_id": 0, "destino_id": 1, "peso": 1.0, "bloqueado": false },
+    { "id": 902, "origem_id": 91, "destino_id": 6, "peso": 1.0, "bloqueado": false },
+    { "id": 903, "origem_id": 92, "destino_id": 12, "peso": 1.0, "bloqueado": false },
+    { "id": 904, "origem_id": 93, "destino_id": 18, "peso": 1.0, "bloqueado": false },
+    { "id": 101, "origem_id": 1, "destino_id": 2, "peso": 1.0, "bloqueado": false },
+    { "id": 102, "origem_id": 2, "destino_id": 3, "peso": 1.0, "bloqueado": false },
+    { "id": 103, "origem_id": 3, "destino_id": 99, "peso": 1.0, "bloqueado": false },
+    { "id": 104, "origem_id": 4, "destino_id": 5, "peso": 1.0, "bloqueado": false },
+    { "id": 105, "origem_id": 5, "destino_id": 3, "peso": 1.0, "bloqueado": false },
+    { "id": 106, "origem_id": 6, "destino_id": 7, "peso": 1.0, "bloqueado": false },
+    { "id": 107, "origem_id": 7, "destino_id": 8, "peso": 1.0, "bloqueado": false },
+    { "id": 108, "origem_id": 8, "destino_id": 99, "peso": 1.0, "bloqueado": false },
+    { "id": 109, "origem_id": 9, "destino_id": 10, "peso": 1.0, "bloqueado": false },
+    { "id": 110, "origem_id": 10, "destino_id": 11, "peso": 1.0, "bloqueado": false },
+    { "id": 111, "origem_id": 11, "destino_id": 99, "peso": 1.0, "bloqueado": false },
+    { "id": 112, "origem_id": 12, "destino_id": 13, "peso": 1.0, "bloqueado": false },
+    { "id": 113, "origem_id": 13, "destino_id": 14, "peso": 1.0, "bloqueado": false },
+    { "id": 114, "origem_id": 14, "destino_id": 99, "peso": 1.0, "bloqueado": false },
+    { "id": 115, "origem_id": 15, "destino_id": 16, "peso": 1.0, "bloqueado": false },
+    { "id": 116, "origem_id": 16, "destino_id": 17, "peso": 1.0, "bloqueado": false },
+    { "id": 117, "origem_id": 17, "destino_id": 99, "peso": 1.0, "bloqueado": false },
+    { "id": 118, "origem_id": 18, "destino_id": 19, "peso": 1.0, "bloqueado": false },
+    { "id": 119, "origem_id": 19, "destino_id": 20, "peso": 1.0, "bloqueado": false },
+    { "id": 120, "origem_id": 20, "destino_id": 99, "peso": 1.0, "bloqueado": false },
+    { "id": 121, "origem_id": 21, "destino_id": 22, "peso": 1.0, "bloqueado": false },
+    { "id": 122, "origem_id": 22, "destino_id": 1, "peso": 1.0, "bloqueado": false }
+]
+}

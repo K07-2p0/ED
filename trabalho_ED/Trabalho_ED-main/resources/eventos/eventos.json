@@ -1,0 +1,37 @@
+[
+  {
+    "nome": "Bênção dos Antigos",
+    "descricao": "Uma brisa mística empurra-te para a frente.",
+    "tipo_efeito": "AVANCAR"
+  },
+  {
+    "nome": "Escorregadela",
+    "descricao": "O chão está molhado! Escorregas para trás.",
+    "tipo_efeito": "RECUAR"
+  },
+  {
+    "nome": "Vento da Mudança",
+    "descricao": "As posições de todos os jogadores foram baralhadas!",
+    "tipo_efeito": "TROCA_GLOBAL"
+  },
+  {
+    "nome": "Adrenalina Pura",
+    "descricao": "Sentes uma energia renovada. Podes jogar outra vez!",
+    "tipo_efeito": "JOGADA_EXTRA"
+  },
+  {
+    "nome": "Teia de Aranha",
+    "descricao": "Ficas preso numa teia gigante. Perdes o próximo turno.",
+    "tipo_efeito": "BLOQUEIO_TURNO"
+  },
+  {
+    "nome": "Portal Instável",
+    "descricao": "Um portal abre-se e trocas de lugar com alguém.",
+    "tipo_efeito": "TROCA_POSICAO"
+  },
+  {
+    "nome": "Silêncio",
+    "descricao": "Não acontece nada. O corredor está calmo.",
+    "tipo_efeito": "NADA"
+  }
+]

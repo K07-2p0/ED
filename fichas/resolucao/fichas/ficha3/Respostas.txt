@@ -1,0 +1,40 @@
+Parte I
+
+ex 1: -> classes/StackADT.java, classes/EmptyCollectionException.java, classes/ArrayStack.java e testes/ArrayStackDemo.java
+
+ex 2: -> classes/LinearNode.java e classes/LinkedStack.java
+
+ex 3: -> LinkedStack: push e pop. Demonstração em testes/LinkedStackDemo.java
+
+ex 4: -> LinkedStack: peek, isEmpty, size e toString. Demonstração em testes/LinkedStackDemo.java
+
+ex 5: diferenças da java.util.Stack em relação à nossa stack:
+- Estende a classe Vector, por isso herda métodos que não são de uma stack pura (get(i), add(i, x), remove(i),
+  insertElementAt, ...). Com eles é possível aceder ou mexer em qualquer posição, o que quebra o LIFO.
+  A nossa stack só deixa mexer no topo.
+- É uma classe concreta e não implementa uma interface própria de stack. A nossa implementa a interface StackADT,
+  o que permite trocar a implementação (ArrayStack / LinkedStack) sem mudar o resto do código.
+- Tem o método search(o), que diz a que distância do topo está um elemento. A nossa não tem pesquisa
+  (numa stack só se acede ao topo).
+- Para ver se está vazia tem empty() (e também isEmpty(), herdado do Vector).
+- O pop e o peek com a stack vazia lançam EmptyStackException. A nossa lança EmptyCollectionException.
+- Os métodos são synchronized (por causa do Vector), o que a torna mais lenta quando não há várias threads.
+- Por estes motivos a própria documentação do Java recomenda usar a interface Deque (ex: ArrayDeque) em vez de Stack.
+
+
+
+Parte II
+
+1. -> classes/PostfixCalculator.java e testes/PostfixCalculatorDemo.java
+
+2. -> classes/PostfixCalculatorLinked.java
+
+Alterações feitas para usar a LinkedStack em vez da ArrayStack:
+1. O tipo do atributo passou de ArrayStack<Integer> para LinkedStack<Integer>.
+2. No construtor, new ArrayStack<Integer>() passou a new LinkedStack<Integer>().
+3. No evaluate, new ArrayStack<Integer>() passou a new LinkedStack<Integer>().
+
+Não foi preciso mudar mais nada: a lógica da calculadora (push, pop e isEmpty) ficou igual, porque as duas
+classes implementam a mesma interface StackADT e por isso têm os mesmos métodos com o mesmo comportamento.
+Se o atributo tivesse sido declarado como StackADT<Integer>, só era preciso mudar os "new".
+O resultado das expressões é o mesmo nas duas versões (ver testes/PostfixCalculatorDemo.java).

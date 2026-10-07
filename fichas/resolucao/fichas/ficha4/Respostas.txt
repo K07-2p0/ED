@@ -1,0 +1,27 @@
+Parte I
+
+ex 1: -> structures/queue/QueueADT.java, structures/queue/LinkedQueue.java e testes/queue/LinkedQueueDemo.java
+        (cenário: fila de espera de um supermercado)
+
+ex 2: -> structures/queue/CircularArrayQueue.java e testes/queue/CircularArrayQueueDemo.java
+
+ex 3: Alterações feitas para adaptar o cenário do ex. 1 ao ex. 2 (LinkedQueueDemo -> CircularArrayQueueDemo):
+1. O import passou de structures.queue.LinkedQueue para structures.queue.CircularArrayQueue.
+2. O tipo da variável passou de LinkedQueue<String> para CircularArrayQueue<String>.
+3. O new passou de new LinkedQueue<String>() para new CircularArrayQueue<String>(3). Aqui o construtor
+   recebe a capacidade inicial (3 de propósito, para o array dar a volta e ser expandido na demonstração).
+   Se se usasse o construtor sem argumentos (capacidade 10) também funcionava.
+
+Não foi preciso mudar mais nada: o cenário (enqueue, dequeue, first, isEmpty, size e o tratamento da
+EmptyCollectionException) ficou igual, porque as duas classes implementam a mesma interface QueueADT.
+O output das duas demonstrações é idêntico.
+Se a variável tivesse sido declarada como QueueADT<String>, só era preciso mudar o import e o "new".
+
+ex 4: -> testes/cesarcypher/CodificadorCircularArrayQueue.java
+        A chave de repetição (3 1 7 4 2 5) é guardada numa CircularArrayQueue. Para cada caracter faz-se
+        dequeue do valor da chave, desloca-se o caracter esse valor e faz-se enqueue do valor outra vez,
+        para a chave recomeçar quando se esgota. Para descodificar faz-se o mesmo mas a subtrair.
+
+ex 5: -> testes/cesarcypher/CodificadorLinkedQueue.java
+        O mesmo programa, só mudam o import e o tipo/new da fila (CircularArrayQueue -> LinkedQueue),
+        porque as duas implementam QueueADT. O output é igual.

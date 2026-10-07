@@ -1,0 +1,72 @@
+ex 4: dá erro porque os generics não herdam a relação entre os tipos. Collection<Stone> não é uma 
+Collection<Object>, mesmo sendo Stone um Object.
+
+ex 5: o drawAll(List<Shape>) só aceita List<Shape>. Uma List<Circle> ou List<Rectangle> dá erro, pelo mesmo
+motivo do ex 4 (List<Circle> não é uma List<Shape>, mesmo sendo Circle um Shape).
+Solução: usar um wildcard com limite superior:
+
+    public void drawAll(List<? extends Shape> shapes) {
+        for (Shape s : shapes) {
+            s.draw(this);
+        }
+    }
+
+"? extends Shape" aceita uma lista de Shape ou de qualquer subclasse de Shape (Circle, Rectangle, ...),
+por isso o drawAll consegue desenhar TODAS as formas.
+
+
+
+Parte II
+
+1.
+a) A declaração Store<T> é a definição de uma classe genérica
+b) Store é uma classe genérica (ou classe parametrizada)
+c) Store<String> é uma instanciação da classe genérica Store (com String no lugar de T) e T é o tipo parametrizado
+d) O uso de um tipo parametrizado é conhecido como instanciar a classe genérica
+
+2.
+
+a)
+Point[] a = new Point[10];
+Object[] b;
+b = a;
+b[0] = new Point(10,20);
+
+o código compila corretamente? - Sim. O compilador vê a etiqueta b ("móvel de coisas") e pensa: "um ponto é uma coisa, tudo bem".
+Caso compile, é executado sem erros, ou existe alguma exceção? - Executa sem erros. O móvel real é de pontos, e estamos a guardar um ponto. Perfeito.
+
+b)
+Point[] a = new Point[10];
+Object[] b;
+b = a;
+b[0] = "Magical Mystery Tour";
+
+o código compila corretamente? - Sim. O compilador só vê a etiqueta b ("móvel de coisas") e pensa: "um texto é uma coisa, tudo bem". Ele é enganado pela etiqueta.
+Caso compile, é executado sem erros, ou existe alguma exceção? - Existe uma exceção. Quando o programa corre, Java olha para o móvel real e vê que é um móvel só para pontos. Um texto não é um ponto! Lança a exceção ArrayStoreException ("tentaste guardar no array uma coisa do tipo errado").
+
+c)
+Point[] a = new Point[10];
+Object[] b;
+b = a;
+a[0] = "Magical Mystery Tour";
+
+o código compila corretamente? - Não. O compilador vê a etiqueta a, que diz claramente "móvel de pontos". Um texto não é um ponto, por isso dá logo erro de compilação (tipos incompatíveis: String não pode ser convertido em Point).
+Caso compile, é executado sem erros, ou existe alguma exceção? - Não se aplica: como não compila, não chega a ser executado.
+
+3.
+
+ArrayList<Point> a = new ArrayList<Point>();
+ArrayList<Object> b;
+b = a;
+b.add(new Point(10,20));
+
+o código compila corretamente? - Não. Dá erro de compilação logo na linha b = a (incompatible types: ArrayList<Point> cannot be converted to ArrayList<Object>).
+Uma ArrayList<Point> não é uma ArrayList<Object>, mesmo sendo Point um Object (os generics não herdam a relação entre os tipos).
+Caso compile, é executado sem erros, ou existe alguma exceção? - Não se aplica: como não compila, não chega a ser executado.
+
+Diferença para o ex 2: com arrays o b = a era permitido e o erro só aparecia a correr (ArrayStoreException).
+Com generics o compilador apanha o problema logo, antes de o programa correr. É mais seguro.
+
+4. -> classes/ComparadorTamanho.java e testes/OrdenarStringsDemo.java
+
+5. -> classes/Media.java, Livro.java, Video.java, CD.java, Livraria.java e testes/LivrariaDemo.java

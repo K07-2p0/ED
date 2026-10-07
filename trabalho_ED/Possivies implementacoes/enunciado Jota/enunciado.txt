@@ -1,0 +1,8 @@
+Considere o trabalho prático desenvolvido, implemente um método 
+(na classe que achaer mais apropriada) que devolva um iterador com as divisões 
+que não contenham nem enigmas nem alavancas. Teste o código numa nova classe main 
+chamada DefesaED. Considere os seguintes passos para testar o código desenvolvido 
+nesta nova classe main.
+1.⁠ ⁠Carregar um mapa existente em JSON
+2.⁠ ⁠Apresentar no main a funcionalidade pedida (sem necessidade da interação 
+com o utilizador)

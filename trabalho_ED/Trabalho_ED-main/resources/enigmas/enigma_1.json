@@ -1,0 +1,70 @@
+{
+  "nome_colecao": "enigma_1",
+  "descricao": "Conjunto de enigmas a serem usados nas Salas Enigma, incluindo o conjunto inicial e o conjunto adicional.",
+  
+  "questoes": [
+    {
+      "id": 101,
+      "pergunta": "Que estrutura da sua API é a mais indicada para gerir os turnos sequenciais dos jogadores?",
+      "opcoes": [ "A: LinkedStack", "B: CircularArrayQueue", "C: ArrayHeap", "D: DoublyLinkedList" ],
+      "resposta_correta": "B",
+      "pontos_por_acerto": 10
+    },
+    {
+      "id": 102,
+      "pergunta": "Qual dos seguintes métodos deve ser usado para adicionar um novo elemento ao topo de uma Pilha (Stack)?",
+      "opcoes": [ "A: enqueue()", "B: peek()", "C: pop()", "D: push()" ],
+      "resposta_correta": "D",
+      "pontos_por_acerto": 5
+    },
+    {
+      "id": 103,
+      "pergunta": "No contexto da sua API, o labirinto é modelado como um 'Network' (Rede). O que representa cada 'Divisao' do Labirinto nessa estrutura?",
+      "opcoes": [ "A: Uma Aresta (Edge)", "B: Um Peso (Weight)", "C: Um Vértice (Vertex)", "D: Um Caminho (Path)" ],
+      "resposta_correta": "C",
+      "pontos_por_acerto": 10
+    },
+    {
+      "id": 104,
+      "pergunta": "Um evento aleatório que obriga o jogador a 'Recuar Casas' deve garantir que o recuo só vá até à última posição após uma troca de posição. Esta regra visa a segurança ou a aleatoriedade?",
+      "opcoes": [ "A: Segurança (Safety/Regra)", "B: Aleatoriedade (Randomness)" ],
+      "resposta_correta": "A",
+      "pontos_por_acerto": 5
+    },
+    {
+      "id": 105,
+      "pergunta": "Qual a complexidade temporal (Big O) da operação 'dequeue()' numa 'ArrayQueue' (Fila baseada em Array) que requer o deslocamento de todos os elementos após a remoção do primeiro?",
+      "opcoes": [ "A: O(1)", "B: O(log n)", "C: O(n)", "D: O(n^2)" ],
+      "resposta_correta": "C",
+      "pontos_por_acerto": 10
+    },
+    {
+      "id": 106,
+      "pergunta": "Que estrutura de dados deve ser usada para processar eventos de jogo (por exemplo, efeitos de estado ou habilidades) que possuem diferentes níveis de urgência, garantindo que o evento mais urgente seja sempre o próximo a ser executado?",
+      "opcoes": [ "A: ArrayStack", "B: CircularArrayQueue", "C: ArrayHeap (Fila de Prioridade)", "D: DoublyLinkedList" ],
+      "resposta_correta": "C",
+      "pontos_por_acerto": 15
+    },
+    {
+      "id": 107,
+      "pergunta": "Ao implementar o inventário de um jogador, onde o último item adicionado é o primeiro a ser usado (LIFO - Last-In, First-Out), qual a estrutura abstrata mais adequada?",
+      "opcoes": [ "A: Fila (Queue)", "B: Pilha (Stack)", "C: Árvore (Tree)", "D: Grafo (Graph)" ],
+      "resposta_correta": "B",
+      "pontos_por_acerto": 5
+    },
+    {
+      "id": 108,
+      "pergunta": "No Labirinto, modelado como um 'Network' (Grafo), que algoritmo deve ser usado para encontrar o caminho com o menor número de Divisões (vértices) entre a 'Divisao Inicial' e a 'Divisao Final'?",
+      "opcoes": [ "A: Depth-First Search (DFS)", "B: Breadth-First Search (BFS)", "C: QuickSort", "D: Inorder Traversal" ],
+      "resposta_correta": "B",
+      "pontos_por_acerto": 15
+    },
+    {
+      "id": 109,
+      "pergunta": "O método 'push()' numa Pilha (Stack), que adiciona um elemento, é funcionalmente análogo a que método numa Fila (Queue)?",
+      "opcoes": [ "A: dequeue()", "B: peek()", "C: enqueue()", "D: pop()" ],
+      "resposta_correta": "C",
+      "pontos_por_acerto": 10
+    }
+  ]
+}

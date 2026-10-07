@@ -1,0 +1,11 @@
+Salas com imagens - ao entrar numa sala, o jogo entra numa janela onde de fundo aparece uma imagem alusiva a sala - definida no json
+ao escolher um caminho, aparecia as imagens das salas ajassentes salas ao jogador "image_background" no ecra principal do jogo
+Caminhos com atalho, a descricao da sala apareceria com uma cor diferente ao jogador
+ao fazer um evento apareceria um balao de fala, a imagem do guardiao do lado direito (como se ele estiversse a falar). nesse balao de fala estaria o a descricao do enigma. e as opcoes aparecem por baixo
+
+
+mapa com blur - os jogadores vao descobrindo o mapa ao pandar pelas salas (os vertices adjassentes do grafo seriam os unicos que se mostrariam para o jogador)
+
+
+"image_background": "desert_village.png",
+"image_guardian": "vilager.png"

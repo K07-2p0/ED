@@ -1,0 +1,43 @@
+Parte I
+
+ex 1: -> classes/Node.java, classes/LinkedList.java e testes/LinkedListDemo.java
+
+ex 2: -> classes/SentinelLinkedList.java e testes/SentinelLinkedListDemo.java
+
+ex 3: a diferença está nos casos especiais.
+Na LinkedList normal o remove tem de tratar à parte a lista vazia e a remoção do primeiro nó, porque aí é preciso
+mudar o head (não existe nenhum nó antes dele).
+Na SentinelLinkedList há sempre um nó sentinela antes e depois de qualquer elemento, por isso o add e o remove
+usam sempre o mesmo código (previous.setNext(...)), sem ifs para casos especiais.
+O custo é ter 2 nós extra que não guardam dados. A lista está vazia quando head.getNext() == tail.
+
+ex 4: -> classes/DoubleNode.java, classes/DoublyLinkedList.java e testes/DoublyLinkedListDemo.java
+
+
+
+Parte II
+
+1.
+
+Quais são os componentes básicos que compõem uma lista ligada? - Os nós (cada um com um elemento e uma referência
+para o nó seguinte) e uma referência para o primeiro nó (head). Normalmente tem também um contador de elementos
+e, às vezes, uma referência para o último nó (tail).
+
+Para que serve um nó numa lista ligada? - Guarda um elemento e a ligação (referência) para o nó seguinte.
+É isso que permite encadear os elementos uns nos outros.
+
+Qual a diferença entre um array e uma lista ligada? - O array tem tamanho fixo, os elementos ficam seguidos em
+memória e o acesso por índice é direto (O(1)), mas inserir ou remover no meio obriga a deslocar elementos.
+A lista ligada é dinâmica (cresce e diminui conforme é preciso), inserir/remover só muda referências, mas para
+chegar a uma posição é preciso percorrer a lista desde o início (O(n)) e gasta memória extra com as referências.
+
+Qual a diferença entre uma lista ligada e uma lista duplamente ligada? - Na duplamente ligada cada nó tem uma
+referência para o seguinte E para o anterior. Assim pode ser percorrida nos dois sentidos e remover o último nó
+é direto (na simples é preciso percorrer a lista toda para encontrar o penúltimo). Em troca gasta mais memória e
+há mais referências para manter atualizadas.
+
+2. -> DoublyLinkedList: toArray, toArrayUntil, toArrayAfter, toArrayBetween (posições começam em 0)
+
+3. -> DoublyLinkedList: getEvenElements
+
+4. -> DoublyLinkedList: countOccurrences e removeAllOccurrences
